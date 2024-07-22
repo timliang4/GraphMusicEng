@@ -1,6 +1,6 @@
 # graph-based music recommendation engine
 
-Modeling relationships between music tracks using an undirected, edge-weighted graph implemented with NumPy. Check out ```recommendation_model.ipynb``` for a clear walkthrough of the code.
+Modeling relationships between music tracks using an undirected, edge-weighted graph. Check out ```recommendation_model.ipynb``` for a clear walkthrough of the code.
 
 ### References
 
