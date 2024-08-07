@@ -1,0 +1,126 @@
+* { box-sizing: border-box; }
+body {
+  font: 16px Arial;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+#search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+#load-container {
+  display: none;
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid dodgerblue; /* Blue */
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.recommendation-list {
+  background-color: #f1f1f1;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  padding: 1% 2%;
+}
+.recommendation-list a {
+  color: black;
+}
+.recommendation-list a:hover {
+  color: dodgerblue;
+}
+.recommendation {
+  padding: 0.25em 0;
+  font-size: 12px;
+}
+.recommendation a {
+  color: black;
+  font-size: 14px;
+}
+.recommendation a:hover {
+  color: dodgerblue;
+}
+
+/* small devices */
+@media only screen and (max-width: 768px) {
+  .container {width: 100%}
+  .autocomplete {width: 90%}
+  .input[type=submit] {width: 10%}
+  .recommendation-list {width: 100%}
+} 
+
+/* medium devices */
+@media only screen and (min-width: 768px) {
+  .container {width: 70%}
+  .autocomplete {width: 63%}
+  .input[type=submit] {width: 7%}
+  .recommendation-list {width: 70%}
+}
+
+/* large devices */
+@media only screen and (min-width: 1400px) {
+  .container {width: 50%}
+  .autocomplete {width: 45%}
+  .input[type=submit] {width: 5%}
+  .recommendation-list {width: 50%}
+}

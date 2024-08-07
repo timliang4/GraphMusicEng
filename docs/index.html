@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-F8SWSRHY4S"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-F8SWSRHY4S");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrackMatch</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>TrackMatch</h1>
+      Get recommendations for your favorite tracks with this graph-based search
+      tool, trained on 10,000+ popular playlists. Explore over 116,000 songs up
+      to 2017.
+    </div>
+    <form autocomplete="off" id="form" action="test">
+      <div id="search-container">
+        <div class="autocomplete">
+          <input
+            id="myInput"
+            type="text"
+            placeholder="Enter song name or artist"
+          />
+        </div>
+        <input type="submit" />
+      </div>
+    </form>
+    <div id="load-container" class="container">
+      <div class="loader"></div>
+    </div>
+    <div id="results"></div>
+    <script src="script.js"></script>
+    <script>
+      autocomplete(document.getElementById("myInput"));
+      recommendations(
+        document.getElementById("form"),
+        document.getElementById("results"),
+        document.getElementById("myInput"),
+        document.getElementById("load-container")
+      );
+    </script>
+  </body>
+</html>
